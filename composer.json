@@ -1,0 +1,47 @@
+{
+    "name": "hyperia/yii2-clear-cache-behavior",
+    "description": "The behavior for Yii2 to clearing cache on specific events",
+    "type": "yii2-extension",
+    "keywords": ["yii2", "behavior", "extension", "cache"],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "license": "MIT",
+    "support": {
+        "source": "https://github.com/hyperia-sk/yii2-string-helpers/"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "hyperia\\behaviors\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "hyperia\\behaviors\\tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Juraj Kalafut",
+            "email": "juraj.kalafut@bezvafinance.cz"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "process-timeout": 1800,
+        "secure-http": false
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.hyperia.sk"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}
