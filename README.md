@@ -52,7 +52,8 @@ class Model extends ActiveRecord
 ## Parameter description
 
 ### events
-*array*
+*array* 
+
 Determinantes on which event would be cache deleted. When you want set up Event with same settings.
 
 Default value:
@@ -76,7 +77,7 @@ Determinantes which part of cache would be deleted **ONLY WHEN EVENTS IS SET**
 
 
 ### type
-*string*
+*string*  
 Sets how the cache will be deleted **ONLY WHEN EVENTS IS SET**  
 Types:  
  - TYPE_INVALIDATE_TAG : Calls yii\caching\TagDependency::invalidate($cacheObject, $value);  
