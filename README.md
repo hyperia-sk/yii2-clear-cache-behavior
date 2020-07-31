@@ -56,33 +56,37 @@ class Model extends ActiveRecord
 Determinantes on which event would be cache deleted. When you want set up Event with same settings.
 
 Default value:
+```
 [
     ActiveRecord::EVENT_AFTER_INSERT,
     ActiveRecord::EVENT_AFTER_UPDATE,
     ActiveRecord::EVENT_AFTER_DELETE
 ]
+```
 
 ### cache
-*string*
-Name of cache component in yii components configuration
+*string* 
+
+Name of cache component in yii components configuration  
 **Default: "cache"**
 
 ### value 
-*string | array | Closure*
+*string | array | Closure*  
 Determinantes which part of cache would be deleted **ONLY WHEN EVENTS IS SET**
 
 
 ### type
 *string*
-Sets how the cache will be deleted **ONLY WHEN EVENTS IS SET**
-Types:
- - TYPE_INVALIDATE_TAG : Calls yii\caching\TagDependency::invalidate($cacheObject, $value);
- - TYPE_FLUSH : Calls flush() method on cache object (by value of cache parameter)
- - TYPE_DELETE : Calls delete($value) method on cache object (by value of cache parameter)
+Sets how the cache will be deleted **ONLY WHEN EVENTS IS SET**  
+Types:  
+ - TYPE_INVALIDATE_TAG : Calls yii\caching\TagDependency::invalidate($cacheObject, $value);  
+ - TYPE_FLUSH : Calls flush() method on cache object (by value of cache parameter)  
+ - TYPE_DELETE : Calls delete($value) method on cache object (by value of cache parameter)  
 
 ### events_with_settings
-*array*
-Array which represents setting of multiple events. Determinantes on which event would be cache deleted. When you want set up multiple Events
+*array*  
+Array which represents setting of multiple events. Determinantes on which event would be cache deleted. When you want set up multiple Events  
+ 
 Simple example:
 ```php
     'events_with_settings' => [
