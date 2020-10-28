@@ -1,5 +1,6 @@
 # Yii2 clear cache behavior
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperia-sk/yii2-clear-cache-behavior/master/LICENSE) 
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperia-sk/yii2-clear-cache-behavior/master/LICENSE)
+[![Latest Stable Version](https://poser.pugx.org/hyperia/yii2-clear-cache-behavior/v/stable)](https://packagist.org/packages/hyperia/yii2-clear-cache-behavior)
 > The behavior for Yii2 to clearing cache on specific events
 
 ## Instalation
@@ -28,7 +29,7 @@ use hyperia\behaviors\ClearCacheBehavior;
 
 class Model extends ActiveRecord
 {
-    const CACHE_KEY = '~model~';
+    private const CACHE_KEY = '~model~';
 
     public function behaviors()
     {
@@ -90,7 +91,7 @@ Array which represents setting of multiple events. Determinantes on which event 
  
 Simple example:
 ```php
-    'events_with_settings' => [
+    'eventsWithSettings' => [
           \yii\web\Controller::EVENT_BEFORE_ACTION => [
               'type' => ClearCacheBehavior::TYPE_INVALIDATE_TAG,
               'value' => static::CACHE_KEY
