@@ -28,7 +28,7 @@ use hyperia\behaviors\ClearCacheBehavior;
 
 class Model extends ActiveRecord
 {
-    const CACHE_KEY = '~model~';
+    private const CACHE_KEY = '~model~';
 
     public function behaviors()
     {
@@ -90,7 +90,7 @@ Array which represents setting of multiple events. Determinantes on which event 
  
 Simple example:
 ```php
-    'events_with_settings' => [
+    'eventsWithSettings' => [
           \yii\web\Controller::EVENT_BEFORE_ACTION => [
               'type' => ClearCacheBehavior::TYPE_INVALIDATE_TAG,
               'value' => static::CACHE_KEY

@@ -10,11 +10,11 @@ use yii\db\ActiveRecord;
 
 class ClearCacheBehavior extends Behavior
 {
-    const TYPE_INVALIDATE_TAG = 'invalidate';
-    const TYPE_FLUSH = 'flush';
-    const TYPE_DELETE = 'delete';
+    public const TYPE_INVALIDATE_TAG = 'invalidate';
+    public const TYPE_FLUSH = 'flush';
+    public const TYPE_DELETE = 'delete';
     
-    private static $DEFAULT_FUNCTION = 'process';
+    private const DEFAULT_FUNCTION = 'process';
     
     /**
      * Array which represents setting of multiple events
@@ -23,7 +23,7 @@ class ClearCacheBehavior extends Behavior
      * <br>
      * Simple example:
      * <pre><code>
-     * 'events_with_settings' => [
+     * 'eventsWithSettings' => [
      *      \yii\web\Controller::EVENT_BEFORE_ACTION => [
      *          'type' => ClearCacheBehavior::TYPE_INVALIDATE_TAG,
      *          'value' => static::CACHE_KEY
@@ -38,7 +38,7 @@ class ClearCacheBehavior extends Behavior
      * </pre></code>
      * @var array
      */
-    public $events_with_settings;
+    public $eventsWithSettings;
     
     /**
      * Determinantes on which event would be cache deleted.
@@ -110,9 +110,9 @@ class ClearCacheBehavior extends Behavior
             return;
         }
         
-        if (!empty($this->events_with_settings) && array_key_exists($event->name, $this->events_with_settings)) {
-            $type = $this->events_with_settings[$event->name]['type'];
-            $value = $this->getValue($event, $this->events_with_settings[$event->name]['value']);
+        if (!empty($this->eventsWithSettings) && array_key_exists($event->name, $this->eventsWithSettings)) {
+            $type = $this->eventsWithSettings[$event->name]['type'];
+            $value = $this->getValue($event, $this->eventsWithSettings[$event->name]['value']);
             $this->$type($event, $value);
         }
         
@@ -160,12 +160,12 @@ class ClearCacheBehavior extends Behavior
     public function events()
     {
         return [
-            \yii\web\Controller::EVENT_AFTER_ACTION => static::$DEFAULT_FUNCTION,
-            \yii\web\Controller::EVENT_BEFORE_ACTION => static::$DEFAULT_FUNCTION,
-            \yii\db\BaseActiveRecord::EVENT_AFTER_INSERT => static::$DEFAULT_FUNCTION,
-            \yii\db\BaseActiveRecord::EVENT_AFTER_DELETE => static::$DEFAULT_FUNCTION,
-            \yii\db\BaseActiveRecord::EVENT_AFTER_UPDATE => static::$DEFAULT_FUNCTION,
-            \yii\db\BaseActiveRecord::EVENT_AFTER_REFRESH => static::$DEFAULT_FUNCTION
+            \yii\web\Controller::EVENT_AFTER_ACTION => static::DEFAULT_FUNCTION,
+            \yii\web\Controller::EVENT_BEFORE_ACTION => static::DEFAULT_FUNCTION,
+            \yii\db\BaseActiveRecord::EVENT_AFTER_INSERT => static::DEFAULT_FUNCTION,
+            \yii\db\BaseActiveRecord::EVENT_AFTER_DELETE => static::DEFAULT_FUNCTION,
+            \yii\db\BaseActiveRecord::EVENT_AFTER_UPDATE => static::DEFAULT_FUNCTION,
+            \yii\db\BaseActiveRecord::EVENT_AFTER_REFRESH => static::DEFAULT_FUNCTION
         ];
     }
     
