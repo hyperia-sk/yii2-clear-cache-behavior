@@ -1,5 +1,6 @@
 # Yii2 clear cache behavior
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperia-sk/yii2-clear-cache-behavior/master/LICENSE) 
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperia-sk/yii2-clear-cache-behavior/master/LICENSE)
+[![Latest Stable Version](https://poser.pugx.org/hyperia/yii2-clear-cache-behavior/v/stable)](https://packagist.org/packages/hyperia/yii2-clear-cache-behavior)
 > The behavior for Yii2 to clearing cache on specific events
 
 ## Instalation
